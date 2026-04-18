@@ -1,10 +1,10 @@
 {
   "package_name": "arduinobot_msgs",
   "non_idl_tuples": [
-    "/home/rashmika/arm4_ws/src/arduinobot_msgs:srv/AddTwoInts.srv",
-    "/home/rashmika/arm4_ws/src/arduinobot_msgs:srv/EulerToQuaternion.srv",
-    "/home/rashmika/arm4_ws/src/arduinobot_msgs:srv/QuaternionToEuler.srv",
-    "/home/rashmika/arm4_ws/src/arduinobot_msgs:action/Fibonacci.action",
-    "/home/rashmika/arm4_ws/src/arduinobot_msgs:action/ArduinobotTask.action"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_msgs:srv/AddTwoInts.srv",
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_msgs:srv/EulerToQuaternion.srv",
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_msgs:srv/QuaternionToEuler.srv",
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_msgs:action/Fibonacci.action",
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_msgs:action/ArduinobotTask.action"
   ]
 }

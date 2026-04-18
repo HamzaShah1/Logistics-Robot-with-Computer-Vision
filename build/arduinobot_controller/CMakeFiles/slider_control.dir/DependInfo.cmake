@@ -8,11 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/rashmika/arm4_ws/src/arduinobot_controller/src/slider_control.cpp" "CMakeFiles/slider_control.dir/src/slider_control.cpp.o" "gcc" "CMakeFiles/slider_control.dir/src/slider_control.cpp.o.d"
+  "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_controller/src/slider_control.cpp" "CMakeFiles/slider_control.dir/src/slider_control.cpp.o" "gcc" "CMakeFiles/slider_control.dir/src/slider_control.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

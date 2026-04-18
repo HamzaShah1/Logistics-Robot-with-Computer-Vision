@@ -1,8 +1,8 @@
-# Install script for directory: /home/rashmika/arm4_ws/src/arduinobot_description
+# Install script for directory: /home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/rashmika/arm4_ws/src/install/arduinobot_description")
+  set(CMAKE_INSTALL_PREFIX "/home/hamza/Logistics-Robot-with-Computer-Vision/install/arduinobot_description")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,73 +42,73 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE DIRECTORY FILES
-    "/home/rashmika/arm4_ws/src/arduinobot_description/launch"
-    "/home/rashmika/arm4_ws/src/arduinobot_description/meshes"
-    "/home/rashmika/arm4_ws/src/arduinobot_description/models"
-    "/home/rashmika/arm4_ws/src/arduinobot_description/urdf"
-    "/home/rashmika/arm4_ws/src/arduinobot_description/rviz"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/launch"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/meshes"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/models"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/urdf"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/rviz"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/arduinobot_description")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/arduinobot_description")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/arduinobot_description")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/arduinobot_description")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/path.dsv")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/environment" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/path.dsv")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.bash")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.sh")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.zsh")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.dsv")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_environment_hooks/package.dsv")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_environment_hooks/package.dsv")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/packages/arduinobot_description")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_index/share/ament_index/resource_index/packages/arduinobot_description")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description/cmake" TYPE FILE FILES
-    "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_core/arduinobot_descriptionConfig.cmake"
-    "/home/rashmika/arm4_ws/src/build/arduinobot_description/ament_cmake_core/arduinobot_descriptionConfig-version.cmake"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_core/arduinobot_descriptionConfig.cmake"
+    "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/ament_cmake_core/arduinobot_descriptionConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/rashmika/arm4_ws/src/arduinobot_description/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_description" TYPE FILE FILES "/home/hamza/Logistics-Robot-with-Computer-Vision/arduinobot_description/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -119,5 +119,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rashmika/arm4_ws/src/build/arduinobot_description/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/hamza/Logistics-Robot-with-Computer-Vision/build/arduinobot_description/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

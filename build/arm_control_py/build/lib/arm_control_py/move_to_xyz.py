@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 
-from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseStamped, PointStamped
 from moveit_msgs.srv import GetPositionIK
 
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
@@ -12,7 +12,7 @@ class MoveToXYZ(Node):
     def __init__(self):
         super().__init__("move_to_xyz")
 
-        # ---- ROS params (xyz input) ----
+        # ---- ROS params (search pose input) ----
         self.declare_parameter("x", 0.2)
         self.declare_parameter("y", 0.0)
         self.declare_parameter("z", 0.3)
@@ -26,9 +26,9 @@ class MoveToXYZ(Node):
         # ---- MoveIt settings ----
         self.group_name = "arm"
         self.ik_link_name = "claw_support"
-        self.robot_base_frame = "base_link"   # pose is expressed in this frame
+        self.robot_base_frame = "base_link"
 
-        # ---- Publisher to your existing controller ----
+        # ---- Publisher to controller ----
         self.traj_topic = "/arm_controller/joint_trajectory"
         self.pub = self.create_publisher(JointTrajectory, self.traj_topic, 10)
 
@@ -41,37 +41,41 @@ class MoveToXYZ(Node):
             raise RuntimeError("/compute_ik service not available")
 
         self.get_logger().info(
-            f"Requesting IK for x={self.x}, y={self.y}, z={self.z} in frame {self.robot_base_frame}"
+            f"Moving to SEARCH pose x={self.x}, y={self.y}, z={self.z} in frame {self.robot_base_frame}"
         )
 
-        # Do one-shot execution
         self.timer = self.create_timer(0.5, self.run_once)
         self.sent = False
+        
+        self.object_sub = self.create_subscription(
+            PointStamped,
+            '/detected_object_point',
+            self.object_callback,
+            10
+        )
+
+        self.search_reached = False
+        self.object_moved = False
 
     def run_once(self):
         if self.sent:
             return
         self.sent = True
 
-        # 1) Build IK request
         req = GetPositionIK.Request()
         req.ik_request.group_name = self.group_name
         req.ik_request.ik_link_name = self.ik_link_name
         req.ik_request.avoid_collisions = False
-
 
         pose = PoseStamped()
         pose.header.frame_id = self.robot_base_frame
         pose.pose.position.x = self.x
         pose.pose.position.y = self.y
         pose.pose.position.z = self.z
-
-        # Orientation: keep neutral quaternion (no rotation)
         pose.pose.orientation.w = 1.0
 
         req.ik_request.pose_stamped = pose
 
-        # 2) Call IK service
         future = self.ik_client.call_async(req)
         future.add_done_callback(self.on_ik_result)
 
@@ -82,17 +86,14 @@ class MoveToXYZ(Node):
             self.get_logger().error(f"IK service call failed: {e}")
             return
 
-        # MoveIt error codes: SUCCESS = 1
         if res.error_code.val != 1:
             self.get_logger().error(f"IK failed. error_code = {res.error_code.val}")
             return
 
-        # 3) Extract joint solution
         joint_state = res.solution.joint_state
         names = list(joint_state.name)
         positions = list(joint_state.position)
 
-        # Filter to your 3 joints in correct order
         wanted = ["joint_1", "joint_2", "joint_3"]
         target = []
         for j in wanted:
@@ -103,51 +104,89 @@ class MoveToXYZ(Node):
 
         self.get_logger().info(f"IK solution (joint_1..3): {target}")
 
-        # ---- Go → wait 5s → return home (3-point trajectory) ----
-        home = [0.0, -0.3, -0.3]   # <-- set your HOME joint angles here
-        wait_time = 5.0
+        traj = JointTrajectory()
+        traj.joint_names = wanted
 
-        t_to_target = float(self.duration)   # time to reach target
-        t_hold = wait_time                   # wait at target
-        t_return = float(self.duration)      # time to return home (reuse duration)
+        p1 = JointTrajectoryPoint()
+        p1.positions = target
+
+        s1 = int(self.duration)
+        n1 = int((self.duration - s1) * 1e9)
+        p1.time_from_start = Duration(sec=s1, nanosec=n1)
+
+        traj.points = [p1]
+
+        self.pub.publish(traj)
+        self.get_logger().info("Moved to SEARCH pose. Waiting for detection...")
+        
+        self.search_reached = True
+        
+    def object_callback(self, msg):
+        if not self.search_reached:
+            return
+
+        if self.object_moved:
+            return
+
+        self.object_moved = True
+        self.get_logger().info(
+            f"Detected object point received: x={msg.point.x:.3f}, y={msg.point.y:.3f}, z={msg.point.z:.3f}"
+        )
+
+        req = GetPositionIK.Request()
+        req.ik_request.group_name = self.group_name
+        req.ik_request.ik_link_name = self.ik_link_name
+        req.ik_request.avoid_collisions = False
+
+        pose = PoseStamped()
+        pose.header.frame_id = self.robot_base_frame
+        pose.pose.position.x = msg.point.x
+        pose.pose.position.y = msg.point.y
+        pose.pose.position.z = msg.point.z
+        pose.pose.orientation.w = 1.0
+
+        req.ik_request.pose_stamped = pose
+
+        future = self.ik_client.call_async(req)
+        future.add_done_callback(self.on_object_ik_result)
+        
+    def on_object_ik_result(self, future):
+        try:
+            res = future.result()
+        except Exception as e:
+            self.get_logger().error(f"Object IK service call failed: {e}")
+            return
+
+        if res.error_code.val != 1:
+            self.get_logger().error(f"Object IK failed. error_code = {res.error_code.val}")
+            return
+
+        joint_state = res.solution.joint_state
+        names = list(joint_state.name)
+        positions = list(joint_state.position)
+
+        wanted = ["joint_1", "joint_2", "joint_3"]
+        target = []
+        for j in wanted:
+            if j not in names:
+                self.get_logger().error(f"IK solution missing {j}. Got joints: {names}")
+                return
+            target.append(float(positions[names.index(j)]))
 
         traj = JointTrajectory()
         traj.joint_names = wanted
 
-        # Point 1: reach TARGET
         p1 = JointTrajectoryPoint()
         p1.positions = target
-        s1 = int(t_to_target)
-        n1 = int((t_to_target - s1) * 1e9)
+
+        s1 = int(self.duration)
+        n1 = int((self.duration - s1) * 1e9)
         p1.time_from_start = Duration(sec=s1, nanosec=n1)
 
-        # Point 2: HOLD at TARGET (same joints, later time)
-        p_hold = JointTrajectoryPoint()
-        p_hold.positions = target
-        th = t_to_target + t_hold
-        sh = int(th)
-        nh = int((th - sh) * 1e9)
-        p_hold.time_from_start = Duration(sec=sh, nanosec=nh)
-
-        # Point 3: return HOME
-        p2 = JointTrajectoryPoint()
-        p2.positions = home
-        t2 = t_to_target + t_hold + t_return
-        s2 = int(t2)
-        n2 = int((t2 - s2) * 1e9)
-        p2.time_from_start = Duration(sec=s2, nanosec=n2)
-
-        traj.points = [p1, p_hold, p2]
+        traj.points = [p1]
 
         self.pub.publish(traj)
-        self.get_logger().info("Published: go → wait 5s → return home")
-
-        # End node shortly after
-        self.create_timer(1.0, self.shutdown)
-
-    def shutdown(self):
-        self.get_logger().info("Done.")
-        rclpy.shutdown()
+        self.get_logger().info("Moved to detected object point.")
 
 
 def main():
