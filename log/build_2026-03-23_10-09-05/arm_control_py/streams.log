@@ -1,0 +1,25 @@
+[5.865s] Invoking command in '/home/rashmika/arm4_ws/src/arm_control_py': PYTHONPATH=/home/rashmika/arm4_ws/src/build/arm_control_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arm_control_py build --build-base /home/rashmika/arm4_ws/src/build/arm_control_py/build install --record /home/rashmika/arm4_ws/src/build/arm_control_py/install.log --single-version-externally-managed install_data
+[6.152s] running egg_info
+[6.152s] writing ../build/arm_control_py/arm_control_py.egg-info/PKG-INFO
+[6.377s] writing dependency_links to ../build/arm_control_py/arm_control_py.egg-info/dependency_links.txt
+[6.479s] writing entry points to ../build/arm_control_py/arm_control_py.egg-info/entry_points.txt
+[6.509s] writing requirements to ../build/arm_control_py/arm_control_py.egg-info/requires.txt
+[6.536s] writing top-level names to ../build/arm_control_py/arm_control_py.egg-info/top_level.txt
+[6.542s] reading manifest file '../build/arm_control_py/arm_control_py.egg-info/SOURCES.txt'
+[6.676s] writing manifest file '../build/arm_control_py/arm_control_py.egg-info/SOURCES.txt'
+[6.824s] running build
+[6.824s] running build_py
+[6.854s] copying arm_control_py/send_joint_trajectory.py -> /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py
+[6.854s] running install
+[6.855s] running install_lib
+[6.855s] copying /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py/send_joint_trajectory.py -> /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py
+[6.909s] byte-compiling /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py/send_joint_trajectory.py to send_joint_trajectory.cpython-310.pyc
+[6.985s] running install_data
+[7.006s] running install_egg_info
+[7.008s] removing '/home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py-0.0.0-py3.10.egg-info' (and everything under it)
+[7.008s] Copying ../build/arm_control_py/arm_control_py.egg-info to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py-0.0.0-py3.10.egg-info
+[7.048s] running install_scripts
+[7.071s] Installing move_to_xyz script to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/arm_control_py
+[7.181s] Installing send_joint_trajectory script to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/arm_control_py
+[7.185s] writing list of installed files to '/home/rashmika/arm4_ws/src/build/arm_control_py/install.log'
+[7.779s] Invoked command in '/home/rashmika/arm4_ws/src/arm_control_py' returned '0': PYTHONPATH=/home/rashmika/arm4_ws/src/build/arm_control_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arm_control_py build --build-base /home/rashmika/arm4_ws/src/build/arm_control_py/build install --record /home/rashmika/arm4_ws/src/build/arm_control_py/install.log --single-version-externally-managed install_data

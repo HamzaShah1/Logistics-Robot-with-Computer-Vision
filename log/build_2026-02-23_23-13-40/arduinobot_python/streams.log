@@ -1,0 +1,37 @@
+[0.976s] Invoking command in '/home/rashmika/arm4_ws/src/arduinobot_python': PYTHONPATH=/home/rashmika/arm4_ws/src/build/arduinobot_python/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arduinobot_python build --build-base /home/rashmika/arm4_ws/src/build/arduinobot_python/build install --record /home/rashmika/arm4_ws/src/build/arduinobot_python/install.log --single-version-externally-managed install_data
+[1.226s] running egg_info
+[1.227s] creating ../build/arduinobot_python/arduinobot_python.egg-info
+[1.227s] writing ../build/arduinobot_python/arduinobot_python.egg-info/PKG-INFO
+[1.227s] writing dependency_links to ../build/arduinobot_python/arduinobot_python.egg-info/dependency_links.txt
+[1.227s] writing entry points to ../build/arduinobot_python/arduinobot_python.egg-info/entry_points.txt
+[1.227s] writing requirements to ../build/arduinobot_python/arduinobot_python.egg-info/requires.txt
+[1.228s] writing top-level names to ../build/arduinobot_python/arduinobot_python.egg-info/top_level.txt
+[1.228s] writing manifest file '../build/arduinobot_python/arduinobot_python.egg-info/SOURCES.txt'
+[1.229s] reading manifest file '../build/arduinobot_python/arduinobot_python.egg-info/SOURCES.txt'
+[1.230s] writing manifest file '../build/arduinobot_python/arduinobot_python.egg-info/SOURCES.txt'
+[1.230s] running build
+[1.230s] running build_py
+[1.230s] creating /home/rashmika/arm4_ws/src/build/arduinobot_python/build
+[1.230s] creating /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib
+[1.230s] creating /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib/arduinobot_python
+[1.231s] copying arduinobot_python/__init__.py -> /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib/arduinobot_python
+[1.231s] copying arduinobot_python/go_to_xyz.py -> /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib/arduinobot_python
+[1.231s] running install
+[1.231s] running install_lib
+[1.231s] creating /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python
+[1.231s] copying /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib/arduinobot_python/__init__.py -> /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python
+[1.232s] copying /home/rashmika/arm4_ws/src/build/arduinobot_python/build/lib/arduinobot_python/go_to_xyz.py -> /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python
+[1.232s] byte-compiling /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python/__init__.py to __init__.cpython-310.pyc
+[1.232s] byte-compiling /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python/go_to_xyz.py to go_to_xyz.cpython-310.pyc
+[1.233s] running install_data
+[1.233s] creating /home/rashmika/arm4_ws/src/install/arduinobot_python/share/ament_index
+[1.233s] creating /home/rashmika/arm4_ws/src/install/arduinobot_python/share/ament_index/resource_index
+[1.233s] creating /home/rashmika/arm4_ws/src/install/arduinobot_python/share/ament_index/resource_index/packages
+[1.233s] copying resource/arduinobot_python -> /home/rashmika/arm4_ws/src/install/arduinobot_python/share/ament_index/resource_index/packages
+[1.233s] copying package.xml -> /home/rashmika/arm4_ws/src/install/arduinobot_python/share/arduinobot_python
+[1.234s] running install_egg_info
+[1.235s] Copying ../build/arduinobot_python/arduinobot_python.egg-info to /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages/arduinobot_python-0.0.0-py3.10.egg-info
+[1.236s] running install_scripts
+[1.255s] Installing go_to_xyz script to /home/rashmika/arm4_ws/src/install/arduinobot_python/lib/arduinobot_python
+[1.255s] writing list of installed files to '/home/rashmika/arm4_ws/src/build/arduinobot_python/install.log'
+[1.293s] Invoked command in '/home/rashmika/arm4_ws/src/arduinobot_python' returned '0': PYTHONPATH=/home/rashmika/arm4_ws/src/build/arduinobot_python/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rashmika/arm4_ws/src/install/arduinobot_python/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arduinobot_python build --build-base /home/rashmika/arm4_ws/src/build/arduinobot_python/build install --record /home/rashmika/arm4_ws/src/build/arduinobot_python/install.log --single-version-externally-managed install_data

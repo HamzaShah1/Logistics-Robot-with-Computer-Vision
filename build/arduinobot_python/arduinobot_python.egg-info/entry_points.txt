@@ -1,0 +1,3 @@
+[console_scripts]
+go_to_xyz = arduinobot_python.go_to_xyz:main
+

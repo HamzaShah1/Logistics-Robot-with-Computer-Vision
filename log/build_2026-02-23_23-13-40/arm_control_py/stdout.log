@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/arm_control_py/arm_control_py.egg-info
+writing ../build/arm_control_py/arm_control_py.egg-info/PKG-INFO
+writing dependency_links to ../build/arm_control_py/arm_control_py.egg-info/dependency_links.txt
+writing entry points to ../build/arm_control_py/arm_control_py.egg-info/entry_points.txt
+writing requirements to ../build/arm_control_py/arm_control_py.egg-info/requires.txt
+writing top-level names to ../build/arm_control_py/arm_control_py.egg-info/top_level.txt
+writing manifest file '../build/arm_control_py/arm_control_py.egg-info/SOURCES.txt'
+reading manifest file '../build/arm_control_py/arm_control_py.egg-info/SOURCES.txt'
+writing manifest file '../build/arm_control_py/arm_control_py.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rashmika/arm4_ws/src/build/arm_control_py/build
+creating /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib
+creating /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py
+copying arm_control_py/__init__.py -> /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py
+copying arm_control_py/send_joint_trajectory.py -> /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py
+copying arm_control_py/move_to_xyz.py -> /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py
+running install
+running install_lib
+creating /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py
+copying /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py/__init__.py -> /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py
+copying /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py/send_joint_trajectory.py -> /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py
+copying /home/rashmika/arm4_ws/src/build/arm_control_py/build/lib/arm_control_py/move_to_xyz.py -> /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py
+byte-compiling /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py/send_joint_trajectory.py to send_joint_trajectory.cpython-310.pyc
+byte-compiling /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py/move_to_xyz.py to move_to_xyz.cpython-310.pyc
+running install_data
+creating /home/rashmika/arm4_ws/src/install/arm_control_py/share/ament_index
+creating /home/rashmika/arm4_ws/src/install/arm_control_py/share/ament_index/resource_index
+creating /home/rashmika/arm4_ws/src/install/arm_control_py/share/ament_index/resource_index/packages
+copying resource/arm_control_py -> /home/rashmika/arm4_ws/src/install/arm_control_py/share/ament_index/resource_index/packages
+copying package.xml -> /home/rashmika/arm4_ws/src/install/arm_control_py/share/arm_control_py
+running install_egg_info
+Copying ../build/arm_control_py/arm_control_py.egg-info to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/python3.10/site-packages/arm_control_py-0.0.0-py3.10.egg-info
+running install_scripts
+Installing move_to_xyz script to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/arm_control_py
+Installing send_joint_trajectory script to /home/rashmika/arm4_ws/src/install/arm_control_py/lib/arm_control_py
+writing list of installed files to '/home/rashmika/arm4_ws/src/build/arm_control_py/install.log'
