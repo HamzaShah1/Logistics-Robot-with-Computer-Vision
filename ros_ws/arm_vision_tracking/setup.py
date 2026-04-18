@@ -25,6 +25,7 @@ setup(
     entry_points={
     'console_scripts': [
         'object_plane_localizer = arm_vision_tracking.object_plane_localizer:main',
+	'yolo_detector_node = arm_vision_tracking.yolo_detector_node:main',
     ],
     },
 )
