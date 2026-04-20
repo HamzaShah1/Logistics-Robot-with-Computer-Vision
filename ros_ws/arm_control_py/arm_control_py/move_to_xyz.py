@@ -14,8 +14,8 @@ class MoveToXYZ(Node):
 
         # ---- ROS params (search pose input) ----
         self.declare_parameter("x", 0.2)
-        self.declare_parameter("y", 0.0)
-        self.declare_parameter("z", 0.3)
+        self.declare_parameter("y", 0.5)
+        self.declare_parameter("z", 1.2)
         self.declare_parameter("duration", 2.5)
 
         self.x = float(self.get_parameter("x").value)

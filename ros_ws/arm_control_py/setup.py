@@ -25,7 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
     'send_joint_trajectory = arm_control_py.send_joint_trajectory:main',
-    'move_to_xyz = arm_control_py.move_to_xyz:main',
+    'move_to_xyz = arm_control_py.move_to_xyz:main','trajectory_executor = arm_control_py.trajectory_executor:main',
         ],
     },
 )
