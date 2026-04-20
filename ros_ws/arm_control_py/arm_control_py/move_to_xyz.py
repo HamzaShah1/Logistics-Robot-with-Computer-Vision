@@ -55,7 +55,6 @@ class MoveToXYZ(Node):
         )
 
         self.search_reached = False
-        self.object_moved = False
 
     def run_once(self):
         if self.sent:
@@ -124,11 +123,6 @@ class MoveToXYZ(Node):
     def object_callback(self, msg):
         if not self.search_reached:
             return
-
-        if self.object_moved:
-            return
-
-        self.object_moved = True
         self.get_logger().info(
             f"Detected object point received: x={msg.point.x:.3f}, y={msg.point.y:.3f}, z={msg.point.z:.3f}"
         )
