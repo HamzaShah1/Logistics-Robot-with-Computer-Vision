@@ -1,3 +1,4 @@
+import os
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
@@ -14,7 +15,7 @@ def generate_launch_description():
             package='v4l2_camera',
             executable='v4l2_camera_node',
             remappings=[('image_raw', '/camera/image_raw')],
-            parameters=[{'video_device': '/dev/video4'}]
+            parameters=[{'video_device': os.environ.get('VIDEO_DEVICE', '/dev/video0')}]
         ),
 
         Node(
