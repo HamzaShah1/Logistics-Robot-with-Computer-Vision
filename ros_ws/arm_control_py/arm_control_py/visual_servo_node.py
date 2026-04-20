@@ -13,8 +13,8 @@ class VisualServoNode(Node):
         self.frame_w = 640.0
         self.frame_h = 480.0
 
-        self.joint_1_min = -0.5
-        self.joint_1_max = 0.5
+        self.joint_1_min = -1.4
+        self.joint_1_max = 1.4
         self.joint_2_min = -0.3
         self.joint_2_max = 0.5
         self.joint_3_fixed = -0.3

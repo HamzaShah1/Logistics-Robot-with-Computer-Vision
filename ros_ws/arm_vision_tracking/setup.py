@@ -9,7 +9,12 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
-        ('share/' + package_name + '/launch', ['launch/vision.launch.py', 'launch/full_system.launch.py',]),
+        ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', [
+            'launch/vision.launch.py',
+            'launch/full_system.launch.py',
+            'launch/test_system.launch.py',
+        ]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -23,9 +28,9 @@ setup(
         ],
     },
     entry_points={
-    'console_scripts': [
-        'object_plane_localizer = arm_vision_tracking.object_plane_localizer:main',
-	'yolo_detector_node = arm_vision_tracking.yolo_detector_node:main',
-    ],
+        'console_scripts': [
+            'object_plane_localizer = arm_vision_tracking.object_plane_localizer:main',
+            'yolo_detector_node = arm_vision_tracking.yolo_detector_node:main',
+        ],
     },
 )
