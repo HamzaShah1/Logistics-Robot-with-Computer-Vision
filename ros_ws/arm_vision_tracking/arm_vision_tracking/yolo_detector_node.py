@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import cv2
 import numpy as np
 import rclpy
@@ -24,7 +25,7 @@ class YoloDetectorNode(Node):
         super().__init__('yolo_detector_node')
 
         self.declare_parameter('model_path',
-            '/home/hamza/Logistics-Robot-with-Computer-Vision/computer_vision/models/V3weights.pt')
+            os.environ.get('MODEL_PATH', '/ros_ws/models/V3weights.pt'))
         self.declare_parameter('confidence_threshold', 0.482)
 
         model_path = self.get_parameter('model_path').value
@@ -54,6 +55,8 @@ class YoloDetectorNode(Node):
 
         self.point_pub = self.create_publisher(
             PointStamped, '/detected_object_point', 10)
+        self.pixel_pub = self.create_publisher(
+            PointStamped, '/detected_object_pixel', 10)
         self.image_pub = self.create_publisher(
             Image, '/camera/image_annotated', 10)
 
@@ -105,6 +108,13 @@ class YoloDetectorNode(Node):
             self.get_logger().info(
                 f'Detected {CLASS_NAMES.get(cls_id, "?")} '
                 f'conf={best_conf:.3f} pixel=({u},{v})')
+
+            pixel_msg = PointStamped()
+            pixel_msg.header = msg.header
+            pixel_msg.point.x = float(u)
+            pixel_msg.point.y = float(v)
+            pixel_msg.point.z = 0.0
+            self.pixel_pub.publish(pixel_msg)
 
             try:
                 point = self.pixel_to_plane(u, v, msg.header.stamp)
